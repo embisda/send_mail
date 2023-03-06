@@ -1,0 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<form enctype="multipart/form-data" method="post" id="contact-form" action="/script.php" name="contact-form">
+	<input type="hidden" id="job" name="job" value="-- Не задано">
+	<input type="hidden" id="path" name="path" value="-- Не задано">
+	<input type="hidden" id="to" name="to" value="$sendTo">
+	<input type="text" id="input-email" name="email" placeholder="Электронная почта" value="">
+	<input type="text" id="input-phone" name="phone" placeholder="Телефон" value="">
+	<input type="text" id="input-person" name="person" placeholder="Имя" value="">
+	<noscript>
+		<p>Для корректной работы сайта требуется поддержка JavaScript</p>
+		<input type="hidden" id="noscript" value="NO SCRIPT">
+	</noscript>
+	<p id="result" class="text"></p>
+	<input id="send-button" class="submit-link" type="submit" value="Заказать">
+</form>
+
+<script type="text/javascript">
+	document.getElementById("job").value = document.title;
+	document.getElementById("path").value = document.location.href;
+</script>
+
+<script type="text/javascript" src="/script.js"></script>
