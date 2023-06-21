@@ -4,15 +4,20 @@
 	<input type="hidden" id="job" name="job" value="-- Не задано">
 	<input type="hidden" id="path" name="path" value="-- Не задано">
 	<input type="hidden" id="to" name="to" value="$sendTo">
-	<input type="text" id="input-email" name="email" placeholder="Электронная почта" value="">
-	<input type="text" id="input-phone" name="phone" placeholder="Телефон" value="">
-	<input type="text" id="input-person" name="person" placeholder="Имя" value="">
+	<input type="text" id="input-email" class="contact-form__input" name="email" placeholder="Электронная почта" value="">
+	<p id="input-email__error-empty" class="contact-form__error">Заполните, чтобы мы могли выслать вам контакты исполнителя</p>
+	<p id="input-email__error-invalid" class="contact-form__error">Электронная почта указана неправильно</p>
+	<input type="text" id="input-phone" class="contact-form__input" name="phone" placeholder="Телефон" value="">
+	<p id="input-phone__error-empty" class="contact-form__error">Заполните, чтобы исполнитель мог с вами связаться</p>
+	<p id="input-phone__error-invalid" class="contact-form__error">В поле «Телефон» должны быть только цифры и знак +</p>
+	<input type="text" id="input-person" class="contact-form__input" name="person" placeholder="Имя" value="">
+	<p id="input-person__error-empty" class="contact-form__error">Как вас зовут?</p>
 	<noscript>
 		<p>Для корректной работы сайта требуется поддержка JavaScript</p>
 		<input type="hidden" id="noscript" value="NO SCRIPT">
 	</noscript>
 	<p id="result" class="text"></p>
-	<input id="send-button" class="submit-link" type="submit" value="Заказать">
+	<input id="send-button" class="submit-link" type="submit" value="Заказать" disabled>
 </form>
 
 <script type="text/javascript">
