@@ -17,8 +17,9 @@ if(isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['person'])) 
 	
 	$job = $_POST['job'];
 	$url = $_POST['path'];
-	
-	$to = 'receiver@email.ru';
+
+	$to  = "Receiver"; 
+	$to .= '<my@email.com>';
 
     $subject = 'Заявка на сайте site.ru - ' . $job;
 
@@ -26,10 +27,11 @@ if(isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['person'])) 
 	
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-	$headers .= "From: My Company Name <company@email.ru>\r\n";
+	$headers .= "From: $name <$email>\r\n";
+	$headers .= "Cc: $name <$email>\r\n";
     $headers .= "Bcc: bcc1@email.ru\r\n";
     $headers .= "Bcc: bcc2@email.ru\r\n";
-    $headers .= "Reply-To: reply@email.ru\r\n";
+    $headers .= "Reply-To: $email \r\n";
 	
 	if (mail($to, $subject, $message, $headers)) {
         echo json_encode([
